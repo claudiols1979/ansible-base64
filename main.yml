@@ -1,0 +1,11 @@
+- name: Convert string to base 64 using python3
+  hosts: localhost
+  tasks:
+  - name: Convert the string to base64
+    base64:
+      name: "VGUgYW1vIEdhZWwgTG9wZXogR3V0aWVycmV6LCBlcmVzIHRvZG8gcGFyYSB0dXMgcGFwYXM="
+      type: "decode"
+    register: out_put
+  - name: dump test output
+    debug:
+      msg: '{{ out_put }}'
